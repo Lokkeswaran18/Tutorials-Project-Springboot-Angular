@@ -1,0 +1,81 @@
+<div class="body">
+<div class="navigation-bar" style="margin-bottom: 30px;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 100px;">
+   <div class="container-fluid">
+     <a class="navbar-brand" >Dynamic CMS</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a routerLink="/userPage" class="nav-link" >User Page</a>
+        </li>
+         <li class="nav-item">
+           <a routerLink="/add" class="nav-link">Add</a>
+         </li>
+         <li class="nav-item">
+          <a routerLink="/publish" class="nav-link">Tutorials</a>
+        </li>
+        </ul>
+     </div>
+     <li class="nav-item">
+      <a routerLink="/" class="nav-link" style="color: gray;">logout  <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z"/></svg></a>
+    </li>
+   </div>
+ </nav> 
+</div>
+
+
+<div>
+  
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="tutorial.title"
+          name="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="tutorial.description"
+          name="description"
+        />
+      </div>
+
+      <div>
+        <label for="mail">Email</label>
+        <input
+        type="text"
+        class="form-control"
+        id="mail"
+        required
+        [(ngModel)]="tutorial.mail"
+        name="mail"
+      />
+      </div>
+      <br>
+
+      <button (click)="saveTutorial()" class="btn btn-success " style="margin-left: 150px;">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Tutorial was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Add</button>
+    </div>
+  </div>
+</div>
+
+</div>

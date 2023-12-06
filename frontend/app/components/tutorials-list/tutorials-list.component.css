@@ -1,0 +1,10 @@
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+.body{
+  background: linear-gradient(to right, #ee9ca7, #ffdde1);
+  height: 100vh;
+}

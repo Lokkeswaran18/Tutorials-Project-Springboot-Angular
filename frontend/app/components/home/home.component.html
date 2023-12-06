@@ -1,0 +1,59 @@
+<div class="body" >
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark  " style="margin-left: 0;" >
+  <div class="container-fluid">
+    <a class="navbar-brand" >Dynamic CMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/userSignUp">SignUp</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/userSignIn" type="button">SignIn</a>
+        </li> 
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/userSignIn" type="button">Contact</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/userSignIn" type="button">About us</a>
+        </li>  -->
+       </ul> 
+    </div>
+    <li class="nav-item ms-start">
+      <a style="background-color: rgba(252, 191, 23, 0.767); color: whitesmoke; " routerLink="/login" class="nav-link" type="button">Admin Login</a>
+    </li> 
+  </div>
+ </nav>
+
+
+ <div>
+      <div class="landing-page">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <div class="main-text my-5">
+                <h2 style="font-size: 35px;">Welcome To <span class="text-white">Dynamic CMS</span></h2>
+                <p class="description ">Welcome to our tutorial submission platform! Are you eager to share your knowledge with the world? We provide a seamless way for you to request the publication of your incredible tutorials. Our dedicated team ensures that your expertise reaches a broad audience by carefully reviewing and publishing your content. Let your voice be heard, and inspire others through our platform! Let's embark on this enlightening journey together.</p>            
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="main-img my-5">
+                <img src="/assets/homeBG.jpg" alt="" style="width: 450px; height: 300px;">
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      <div class="container mt-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+  </div>
+    

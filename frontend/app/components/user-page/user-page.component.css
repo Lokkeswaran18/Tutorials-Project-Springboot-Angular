@@ -1,0 +1,14 @@
+.body{
+    background: linear-gradient(to right, #5433ff, #20bdff, #a5fecb);
+    height: 100vh;
+}
+
+#welcome{
+    color: rgb(255, 245, 233);
+}
+
+.description{
+    font-size: 25px;
+     line-height: 1.1;
+     text-align: justify;
+ }

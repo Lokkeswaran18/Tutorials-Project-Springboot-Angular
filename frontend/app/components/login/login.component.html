@@ -1,0 +1,96 @@
+<div class="body">
+<div class="navigation-bar" style="margin-bottom: 100px;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+   <div class="container-fluid">
+     <a class="navbar-brand" >Dynamic CMS</a>
+     <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button> -->
+     <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav ms-auto">         
+        <label class="nav-item">
+          <a class="nav-link" routerLink="/" style="margin-top: 6px;">Home</a>
+        </label>
+        
+         
+        </ul>
+     </div>
+   </div>
+ </nav> 
+</div>
+
+<div class="container mt-4" style="width: 500px; padding: 20px;" >
+  <div class="card">
+    <h2 class="text-center" style="margin-top: 10px;">Admin Login</h2>
+ <form  >
+    <div class="form-group" style="padding: 15px 15px 0;">
+      <label >Email address</label>
+      <input type="email"  [(ngModel)]="email" [ngModelOptions]="{standalone:true}" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email">
+      <small  class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group" style="padding: 10px 15px 0;">
+      <label >Password</label>
+      <input type="password"  [(ngModel)]="password" [ngModelOptions]="{standalone:true}" class="form-control"  placeholder="Password">
+    </div>
+    <button style="margin-left: 200px; margin-bottom: 10px;" (click)="adminLoginPort()"  type="submit" class="btn btn-primary ">Submit</button>
+  </form>
+</div>
+</div>
+</div>
+
+
+<!-- <form action=""> -->
+    <!-- <div class="input">
+        <label for="">Username</label>
+        <input type="text" name="username"[(ngModel)]="username">
+    </div>
+    <div class="input">
+        <label for="">Password</label>
+        <input type="password"  name="password"[(ngModel)]="password">
+    </div>
+    <div class="input"> -->
+        <!-- <a routerLink="tutorials" type="submit" (click)="LoginUser()" >submit</a> -->
+        <!-- <button  (click)="LoginUser()" type="submit" >LogIn</button> -->
+        <!-- <div *ngIf="isPopupOpen" >
+     
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" (click)="togglePopup()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Do you want to go tutorials   </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" routerLink="login">cancel</button>
+                  <button  class="btn btn-primary"   routerLink="/" >confirm</button>
+                </div>
+              </div>
+            </div> -->
+    <!-- </div> -->
+<!-- </form> --> 
+ <!-- <div  *ngIf="isAuthorized" >
+            <app-tutorial-details></app-tutorial-details>
+        </div>   -->
+<!-- <section>
+    <div class="login-box">-->
+         <!-- <form >
+            <h2>Admin Login</h2>
+            <div class="input-box">
+                
+                <input type="mail" name="username" required>
+                <label for="">Mail Id</label>
+            </div>
+            <div class="input-box">
+               
+                <input type="password" name="password" required >
+                <label for="">password</label>
+            </div>
+            <button  routerLink="/tutorials" type="button">submit</button> 
+        </form>  -->
+        <!-- routerLink="/tutorials" -->
+        <!-- (click)=" adminLoginPort()" -->
+   <!--</div>   -->

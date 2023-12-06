@@ -1,0 +1,143 @@
+
+<div *ngIf="viewMode; else editable">
+  
+  <div *ngIf="currentTutorial.id">
+    
+    <h4>Tutorial</h4>
+    
+    <div>
+      <label><strong>Title:</strong></label> {{ currentTutorial.title }}
+    </div>
+    <div>
+      <label><strong>Description:</strong></label>
+      {{ currentTutorial.description }}
+    </div>
+    <div>
+      <label><strong>Status:</strong></label>
+      {{ currentTutorial.published ? "Published" : "Pending" }}
+    </div>
+
+    <a class="badge badge-warning"
+      routerLink="/tutorials/{{ currentTutorial.id }}">
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentTutorial">
+    <br />
+    <p>Please click on a Tutorial...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div class="body">
+  <div class="navigation-bar" style="margin-bottom: 100px;" class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <div class="container-fluid">
+       <a class="navbar-brand" >Dynamic CMS</a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+             <a routerLink="/tutorials" class="nav-link">Tutorial</a> 
+           </li>
+          </ul>
+       </div>
+       <li class="nav-item">
+        <a routerLink="/" class="nav-link" style="color: gray;">logout  <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z"/></svg></a>
+      </li>
+     </div>
+   </nav> 
+ </div>
+  <div *ngIf="currentTutorial.id" class="edit-form">
+    
+    <h4>Tutorial</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentTutorial.title"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentTutorial.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </div>
+    </form>
+
+    <button
+      class="badge badge-primary mr-2"
+      *ngIf="currentTutorial.published"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button>
+    <button
+      *ngIf="!currentTutorial.published"
+      class="badge badge-primary mr-2"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button>
+
+    <button class="badge badge-danger mr-2" (click)="togglePopup()" >
+      Delete
+    </button>
+    <!-- your-component.component.html -->
+    
+
+    <div *ngIf="isPopupOpen" >
+     
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" (click)="togglePopup()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Do you want to delete ?            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" (click)="togglePopup()">Cancel</button>
+              <button  class="btn btn-primary" (click)="deleteTutorial()">delete</button>
+            </div>
+          </div>
+        </div>
+    
+    </div>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateTutorial()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentTutorial.id">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+  </div>
+</div>
+</ng-template>

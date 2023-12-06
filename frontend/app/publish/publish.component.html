@@ -1,0 +1,89 @@
+<div class="body">
+  <div class="navigation-bar" style="margin-bottom: 30px;">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" >Dynamic CMS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a routerLink="/userPage" class="nav-link" >User Page</a>
+            </li>
+             <li class="nav-item">
+               <a routerLink="/add" class="nav-link">Add</a>
+             </li>
+             <li class="nav-item">
+              <a routerLink="/publish" class="nav-link">Tutorials</a>
+            </li>
+           </ul>
+        </div>
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link" style="color: gray;">logout  <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z"/></svg></a>
+        </li>
+      </div>
+    </nav> 
+  </div>
+  
+  
+  
+  
+  
+  
+  <div class="list row" style="margin-left: 100px;">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <a (click)="sortByAsc()" type="button"><svg (click)="sortByAsc" style="margin-top: 10px;" xmlns="http://www.w3.org/2000/svg" height="25px" width="25px" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#04206a" d="M183.6 469.6C177.5 476.2 169 480 160 480s-17.5-3.8-23.6-10.4l-88-96c-11.9-13-11.1-33.3 2-45.2s33.3-11.1 45.2 2L128 365.7V64c0-17.7 14.3-32 32-32s32 14.3 32 32V365.7l32.4-35.4c11.9-13 32.2-13.9 45.2-2s13.9 32.2 2 45.2l-88 96zM320 320c0-17.7 14.3-32 32-32H480c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9L429.3 416H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H352c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9L402.7 352H352c-17.7 0-32-14.3-32-32zM416 32c12.1 0 23.2 6.8 28.6 17.7l64 128 16 32c7.9 15.8 1.5 35-14.3 42.9s-35 1.5-42.9-14.3L460.2 224H371.8l-7.2 14.3c-7.9 15.8-27.1 22.2-42.9 14.3s-22.2-27.1-14.3-42.9l16-32 64-128C392.8 38.8 403.9 32 416 32zM395.8 176h40.4L416 135.6 395.8 176z"/></svg></a>
+        <a (click)="sortByDsc()" type="button"><svg style="margin: 10px 5px 0 5px;" xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#990422" d="M183.6 469.6C177.5 476.2 169 480 160 480s-17.5-3.8-23.6-10.4l-88-96c-11.9-13-11.1-33.3 2-45.2s33.3-11.1 45.2 2L128 365.7V64c0-17.7 14.3-32 32-32s32 14.3 32 32V365.7l32.4-35.4c11.9-13 32.2-13.9 45.2-2s13.9 32.2 2 45.2l-88 96zM320 64c0-17.7 14.3-32 32-32H480c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9L429.3 160H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H352c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9L402.7 96H352c-17.7 0-32-14.3-32-32zm96 192c12.1 0 23.2 6.8 28.6 17.7l64 128 16 32c7.9 15.8 1.5 35-14.3 42.9s-35 1.5-42.9-14.3L460.2 448H371.8l-7.2 14.3c-7.9 15.8-27.1 22.2-42.9 14.3s-22.2-27.1-14.3-42.9l16-32 64-128c5.4-10.8 16.5-17.7 28.6-17.7zM395.8 400h40.4L416 359.6 395.8 400z"/></svg></a>
+        <input style="margin-top: 5px;"
+          type="text"
+          class="form-control"
+          placeholder="Search by title"
+          [(ngModel)]="title"
+        />
+        <div class="input-group-append">
+          <button style="margin: 5px 0;"
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchTitle()"
+          >
+            Search
+          </button>
+          <button   (click)="searchPublish()" type="button" class="btn btn-primary" style="margin: 5px; border-radius: 5px;">Publish</button>
+          <button  (click)="searchUnpublish()" type="button" class="btn btn-warning" style="margin: 5px; border-radius: 5px;">Unpublish</button>
+        </div>
+      </div>
+    </div>
+   
+    <div class="col-md-6" style="margin-left: 20px;">
+      <table style="width: 300px; background-color: rgb(18, 19, 19); " >
+        <!-- <ng-container matColumnDef="title"> -->
+         <thead class="text-center  " style="height: 30px; color: white; padding: 10px; size: 1.5em;">Tutorials List</thead>
+          <td>
+            
+            <ul class="list-group">
+              <li 
+                class="list-group-item text-center"
+                *ngFor="let tutorial of tutorials | paginate: {itemsPerPage:count, currentPage:page}; let i = index " 
+                [class.active]="i == currentIndex"
+                (click)="setActiveTutorial(tutorial, i) "
+              >
+                {{ tutorial.title }}
+              </li>
+            </ul>
+          </td>
+    </table>   
+
+    </div>
+    
+  </div>
+  
+  
+  <div class="text-center" style="color: rgb(0, 172, 158);">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+  
+  
+  </div> 

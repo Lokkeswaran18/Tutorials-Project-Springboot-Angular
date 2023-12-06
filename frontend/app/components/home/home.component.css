@@ -1,0 +1,10 @@
+.body{
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+     height: 100vh;
+}
+
+.description{
+   font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+}
